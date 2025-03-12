@@ -79,8 +79,8 @@ export default function HologramEffect({ src }) {
   };
 
   return (
-    <div className={styles.hologramContainer}>
-      <img src={src} alt="Hologram" className={styles.hologram} />
+    <div className={styles.hologramContainer} id="holo">
+      <img src={src} alt="Hologram" className={styles.hologram}  />
 
       {/* Audio element for playing the MP3 file */}
       <audio ref={audioRef} src="/assets/images/helenavoice.mp3" preload="auto" />

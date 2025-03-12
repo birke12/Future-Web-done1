@@ -8,20 +8,11 @@ const Navigation = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   const handleScroll = () => {
-    if (window.scrollY > 650) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
+    setScrolled(window.scrollY > 650);
   };
 
   useEffect(() => {
@@ -45,14 +36,32 @@ const Navigation = () => {
       </div>
 
       <ul className={isOpen ? "nav-links open" : "nav-links"}>
+        <li className="dropdown">
+          <span className="dropdown-toggle" onClick={toggleDropdown}>
+            Forside Guide ▼
+          </span>
+          {isDropdownOpen && (
+            <ul className="dropdown-menu">
+              <li>
+                <a href="#holo" onClick={() => setIsDropdownOpen(false)}>
+                  Helena
+                </a>
+              </li>
+              <li>
+                <a href="slider" onClick={() => setIsDropdownOpen(false)}>
+                  Slider
+                </a>
+              </li>
+              <li>
+                <a href="#artikler" onClick={() => setIsDropdownOpen(false)}>
+                  Mest læste artikler
+                </a>
+              </li>
+            </ul>
+          )}
+        </li>
         <li>
           <NavLink to="/article">Artikel</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">Log Ind</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">Din Konto</NavLink>
         </li>
         <li>
           <NavLink to="/">Kontakt</NavLink>

@@ -40,7 +40,7 @@ const Slider = () => {
   }
 
   return (
-    <div className={styles.slider}>
+    <div className={styles.slider} id="slider">
       <div className={styles.slide}>
         <HashLink to={articles[currentIndex].link}>
           <img

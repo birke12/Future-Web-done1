@@ -16,17 +16,16 @@ const ArticleSection = ({ jsonPath }) => {
     <section className={styles.articleGridContainer}>
       {/* Article title section */}
       <div className={`${styles.titleWithLines} ${styles.articleTitle}`}>
-
-          <span className={styles.line} ></span>
-          <h2>Mest læste artikler</h2>
-          <span className={styles.line}></span>
-        </div>
+        <span className={styles.line}></span>
+        <h2>Mest læste artikler</h2>
+        <span className={styles.line}></span>
+      </div>
       {/* <div className={styles.articleTitle}>
         <h2>Bliv klogere på fremtiden inden for webudvikling</h2>
       </div> */}
 
       {/* Article grid container */}
-      <div className={styles.articleGrid}>
+      <div className={styles.articleGrid} id="artikler">
         {articles.map((article) => (
           <div key={article.id} className={styles.articleCard}>
             <HashLink to={article.link}>

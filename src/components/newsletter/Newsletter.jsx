@@ -55,12 +55,16 @@ const Newsletter = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className={styles.formContainer}>
+        <div className={styles.formContainer} id="news">
           <form onSubmit={handleSubmit} className={styles.form1}>
             <div className={styles.textContainer}>
-              <h3 className={styles.textHeader}>Vil du med på rejsen ind i fremtiden?</h3>
+              <h3 className={styles.textHeader}>
+                Vil du med på rejsen ind i fremtiden?
+              </h3>
               <div className={styles.newsText}>
-                Tilmeld dig vores nyhedsbrev og få de nyeste opdateringer om webudvikling, trends, og innovation direkte i din inbox. Vær den første til at høre om, hvad der sker i fremtidens web!
+                Tilmeld dig vores nyhedsbrev og få de nyeste opdateringer om
+                webudvikling, trends, og innovation direkte i din inbox. Vær den
+                første til at høre om, hvad der sker i fremtidens web!
               </div>
             </div>
             <input
@@ -96,7 +100,8 @@ const Newsletter = () => {
           <div>
             <h2 className={styles.modalText}>Tak for tilmeldingen!</h2>
             <p>
-              Vi har sendt dig en mail til {inputValue2}. Tjek venligst din indbakke for de nyeste opdateringer om webudvikling.
+              Vi har sendt dig en mail til {inputValue2}. Tjek venligst din
+              indbakke for de nyeste opdateringer om webudvikling.
             </p>
           </div>
         </Modal>
